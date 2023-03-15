@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Computer Vision | Results from Analysis</title>
+</head>
+<style>
+    .result-form{
+        margin: auto 20px;
+        padding: 10px;
+        align-items: center;
+        justify-content: center;
+        background-color: #55c4f7;
+        width: 80%;
+      }
+      
+      .result-form a {
+        color: #222222;
+      }
+</style>
+<body>
+    <div class="result-form">
+        <h1>The uploaded file has the following: </h1>
+
+        {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                <ul class="flashes">
+                    {% for message in messages %}
+                    <li>{{ message }}</li>
+                    {% endfor %}
+                </ul>
+                {% endif %}
+                {% endwith %}
+
+        <a href="/">Upload another file</a>
+    </div>
+</body>
+</html>
